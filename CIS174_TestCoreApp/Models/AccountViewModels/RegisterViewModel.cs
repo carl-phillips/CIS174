@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace CIS174_TestCoreApp.Models.AccountViewModels
 {
     public class RegisterViewModel
     {
+        [Required]
+        [Display(Name = "FullName")]
+        public string Name { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

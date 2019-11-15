@@ -10,13 +10,7 @@ namespace CIS174_TestCoreApp.Models
     // Add profile data for application users by adding properties to the ApplicationUser class
     public class ApplicationUser : IdentityUser
     {
-        [Required]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
-        [Required]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
-        [Display(Name = "Remember Me")]
-        public Boolean RememberMe { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }

@@ -2,15 +2,6 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
-      "DataAnnotationsExtensions/5.0.1.27": {
-        "type": "package",
-        "compile": {
-          "lib/NETFramework40/DataAnnotationsExtensions.dll": {}
-        },
-        "runtime": {
-          "lib/NETFramework40/DataAnnotationsExtensions.dll": {}
-        }
-      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
         "dependencies": {
@@ -1590,18 +1581,6 @@
           "lib/netstandard1.3/Microsoft.CodeAnalysis.CSharp.Workspaces.dll": {}
         }
       },
-      "Microsoft.CodeAnalysis.FxCopAnalyzers/2.9.7": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CodeAnalysis.VersionCheckAnalyzer": "[2.9.7]",
-          "Microsoft.CodeQuality.Analyzers": "[2.9.7]",
-          "Microsoft.NetCore.Analyzers": "[2.9.7]",
-          "Microsoft.NetFramework.Analyzers": "[2.9.7]"
-        },
-        "build": {
-          "build/Microsoft.CodeAnalysis.FxCopAnalyzers.props": {}
-        }
-      },
       "Microsoft.CodeAnalysis.Razor/2.1.1": {
         "type": "package",
         "dependencies": {
@@ -1614,12 +1593,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.CodeAnalysis.Razor.dll": {}
-        }
-      },
-      "Microsoft.CodeAnalysis.VersionCheckAnalyzer/2.9.7": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.CodeAnalysis.VersionCheckAnalyzer.props": {}
         }
       },
       "Microsoft.CodeAnalysis.Workspaces.Common/2.8.0": {
@@ -1638,12 +1611,6 @@
         },
         "runtime": {
           "lib/netstandard1.3/Microsoft.CodeAnalysis.Workspaces.dll": {}
-        }
-      },
-      "Microsoft.CodeQuality.Analyzers/2.9.7": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.CodeQuality.Analyzers.props": {}
         }
       },
       "Microsoft.CSharp/4.5.0": {
@@ -1747,6 +1714,19 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll": {}
         }
       },
+      "Microsoft.EntityFrameworkCore.Relational.Design/1.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.6",
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {}
+        }
+      },
       "Microsoft.EntityFrameworkCore.SqlServer/2.1.1": {
         "type": "package",
         "dependencies": {
@@ -1758,6 +1738,20 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.SqlServer.Design/1.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.6",
+          "Microsoft.EntityFrameworkCore.SqlServer": "1.1.6",
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.SqlServer.Design.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.SqlServer.Design.dll": {}
         }
       },
       "Microsoft.EntityFrameworkCore.Tools/2.1.1": {
@@ -2451,12 +2445,6 @@
           "lib/netstandard2.0/Microsoft.Net.Http.Headers.dll": {}
         }
       },
-      "Microsoft.NetCore.Analyzers/2.9.7": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NetCore.Analyzers.props": {}
-        }
-      },
       "Microsoft.NETCore.App/2.1.0": {
         "type": "package",
         "dependencies": {
@@ -2648,17 +2636,11 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NetFramework.Analyzers/2.9.7": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NetFramework.Analyzers.props": {}
-        }
-      },
-      "Microsoft.VisualStudio.Web.CodeGeneration/2.1.10": {
+      "Microsoft.VisualStudio.Web.CodeGeneration/2.1.9": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "2.1.1",
-          "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore": "2.1.10"
+          "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore": "2.1.9"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.dll": {}
@@ -2667,7 +2649,7 @@
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.dll": {}
         }
       },
-      "Microsoft.VisualStudio.Web.CodeGeneration.Contracts/2.1.10": {
+      "Microsoft.VisualStudio.Web.CodeGeneration.Contracts/2.1.9": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "11.0.2"
@@ -2679,11 +2661,11 @@
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll": {}
         }
       },
-      "Microsoft.VisualStudio.Web.CodeGeneration.Core/2.1.10": {
+      "Microsoft.VisualStudio.Web.CodeGeneration.Core/2.1.9": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "2.1.1",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Templating": "2.1.10",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Templating": "2.1.9",
           "Newtonsoft.Json": "11.0.2"
         },
         "compile": {
@@ -2693,10 +2675,10 @@
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll": {}
         }
       },
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design/2.1.10": {
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design/2.1.9": {
         "type": "package",
         "dependencies": {
-          "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": "2.1.10"
+          "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": "2.1.9"
         },
         "compile": {
           "lib/netstandard2.0/dotnet-aspnet-codegenerator-design.dll": {}
@@ -2705,10 +2687,10 @@
           "lib/netstandard2.0/dotnet-aspnet-codegenerator-design.dll": {}
         }
       },
-      "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore/2.1.10": {
+      "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore/2.1.9": {
         "type": "package",
         "dependencies": {
-          "Microsoft.VisualStudio.Web.CodeGeneration.Core": "2.1.10"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Core": "2.1.9"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll": {}
@@ -2717,12 +2699,12 @@
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll": {}
         }
       },
-      "Microsoft.VisualStudio.Web.CodeGeneration.Templating/2.1.10": {
+      "Microsoft.VisualStudio.Web.CodeGeneration.Templating/2.1.9": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Razor.Language": "2.1.1",
           "Microsoft.CodeAnalysis.CSharp": "2.8.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Utils": "2.1.10"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Utils": "2.1.9"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll": {}
@@ -2731,11 +2713,11 @@
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll": {}
         }
       },
-      "Microsoft.VisualStudio.Web.CodeGeneration.Utils/2.1.10": {
+      "Microsoft.VisualStudio.Web.CodeGeneration.Utils/2.1.9": {
         "type": "package",
         "dependencies": {
           "Microsoft.CodeAnalysis.CSharp.Workspaces": "2.8.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Contracts": "2.1.10",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Contracts": "2.1.9",
           "Newtonsoft.Json": "11.0.2",
           "NuGet.Frameworks": "4.7.0"
         },
@@ -2746,10 +2728,10 @@
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll": {}
         }
       },
-      "Microsoft.VisualStudio.Web.CodeGenerators.Mvc/2.1.10": {
+      "Microsoft.VisualStudio.Web.CodeGenerators.Mvc/2.1.9": {
         "type": "package",
         "dependencies": {
-          "Microsoft.VisualStudio.Web.CodeGeneration": "2.1.10"
+          "Microsoft.VisualStudio.Web.CodeGeneration": "2.1.9"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll": {}
@@ -4664,18 +4646,6 @@
     }
   },
   "libraries": {
-    "DataAnnotationsExtensions/5.0.1.27": {
-      "sha512": "lw4n4XzY62raAOrrlPdkh4h3PXenReARIazAPzs8AvlkKDAK9pe7kcUL3dh3T095/Q9+LezoXCfjEgDPslmGyg==",
-      "type": "package",
-      "path": "dataannotationsextensions/5.0.1.27",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "dataannotationsextensions.5.0.1.27.nupkg.sha512",
-        "dataannotationsextensions.nuspec",
-        "lib/NETFramework40/DataAnnotationsExtensions.dll"
-      ]
-    },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "sha512": "owAlEIUZXWSnkK8Z1c+zR47A0X6ykF4XjbPok4lQKNuciUfHLGPd6QnI+rt/8KlQ17PmF+I4S3f+m+Qe4IvViw==",
       "type": "package",
@@ -6000,89 +5970,6 @@
         "microsoft.codeanalysis.csharp.workspaces.nuspec"
       ]
     },
-    "Microsoft.CodeAnalysis.FxCopAnalyzers/2.9.7": {
-      "sha512": "/WbA9NXJmd7LW4ERe1v9YVRlpp0nnEMV5ne0ydnKT3/RMLzTt9AZjghuL6u3eSclyhcSI/mW/B4uPv2cAr4PXg==",
-      "type": "package",
-      "path": "microsoft.codeanalysis.fxcopanalyzers/2.9.7",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "EULA.rtf",
-        "ThirdPartyNotices.rtf",
-        "build/Microsoft.CodeAnalysis.FxCopAnalyzers.props",
-        "documentation/Analyzer Configuration.md",
-        "documentation/Microsoft.CodeAnalysis.FxCopAnalyzers.md",
-        "documentation/Microsoft.CodeAnalysis.FxCopAnalyzers.sarif",
-        "editorconfig/AllRulesDefault/.editorconfig",
-        "editorconfig/AllRulesDisabled/.editorconfig",
-        "editorconfig/AllRulesEnabled/.editorconfig",
-        "editorconfig/DataflowRulesDefault/.editorconfig",
-        "editorconfig/DataflowRulesEnabled/.editorconfig",
-        "editorconfig/DesignRulesDefault/.editorconfig",
-        "editorconfig/DesignRulesEnabled/.editorconfig",
-        "editorconfig/DocumentationRulesDefault/.editorconfig",
-        "editorconfig/DocumentationRulesEnabled/.editorconfig",
-        "editorconfig/GlobalizationRulesDefault/.editorconfig",
-        "editorconfig/GlobalizationRulesEnabled/.editorconfig",
-        "editorconfig/InteroperabilityRulesDefault/.editorconfig",
-        "editorconfig/InteroperabilityRulesEnabled/.editorconfig",
-        "editorconfig/MaintainabilityRulesDefault/.editorconfig",
-        "editorconfig/MaintainabilityRulesEnabled/.editorconfig",
-        "editorconfig/NamingRulesDefault/.editorconfig",
-        "editorconfig/NamingRulesEnabled/.editorconfig",
-        "editorconfig/PerformanceRulesDefault/.editorconfig",
-        "editorconfig/PerformanceRulesEnabled/.editorconfig",
-        "editorconfig/PortedFromFxCopRulesDefault/.editorconfig",
-        "editorconfig/PortedFromFxCopRulesEnabled/.editorconfig",
-        "editorconfig/ReliabilityRulesDefault/.editorconfig",
-        "editorconfig/ReliabilityRulesEnabled/.editorconfig",
-        "editorconfig/SecurityRulesDefault/.editorconfig",
-        "editorconfig/SecurityRulesEnabled/.editorconfig",
-        "editorconfig/UsageRulesDefault/.editorconfig",
-        "editorconfig/UsageRulesEnabled/.editorconfig",
-        "microsoft.codeanalysis.fxcopanalyzers.2.9.7.nupkg.sha512",
-        "microsoft.codeanalysis.fxcopanalyzers.nuspec",
-        "rulesets/AllRulesDefault.ruleset",
-        "rulesets/AllRulesDisabled.ruleset",
-        "rulesets/AllRulesEnabled.ruleset",
-        "rulesets/DataflowRulesDefault.ruleset",
-        "rulesets/DataflowRulesEnabled.ruleset",
-        "rulesets/DesignRulesDefault.ruleset",
-        "rulesets/DesignRulesEnabled.ruleset",
-        "rulesets/DocumentationRulesDefault.ruleset",
-        "rulesets/DocumentationRulesEnabled.ruleset",
-        "rulesets/GlobalizationRulesDefault.ruleset",
-        "rulesets/GlobalizationRulesEnabled.ruleset",
-        "rulesets/InteroperabilityRulesDefault.ruleset",
-        "rulesets/InteroperabilityRulesEnabled.ruleset",
-        "rulesets/MaintainabilityRulesDefault.ruleset",
-        "rulesets/MaintainabilityRulesEnabled.ruleset",
-        "rulesets/NamingRulesDefault.ruleset",
-        "rulesets/NamingRulesEnabled.ruleset",
-        "rulesets/PerformanceRulesDefault.ruleset",
-        "rulesets/PerformanceRulesEnabled.ruleset",
-        "rulesets/PortedFromFxCopRulesDefault.ruleset",
-        "rulesets/PortedFromFxCopRulesEnabled.ruleset",
-        "rulesets/ReliabilityRulesDefault.ruleset",
-        "rulesets/ReliabilityRulesEnabled.ruleset",
-        "rulesets/SecurityRulesDefault.ruleset",
-        "rulesets/SecurityRulesEnabled.ruleset",
-        "rulesets/UsageRulesDefault.ruleset",
-        "rulesets/UsageRulesEnabled.ruleset",
-        "rulesets/legacy/AllRules.ruleset",
-        "rulesets/legacy/BasicCorrectnessRules.ruleset",
-        "rulesets/legacy/BasicDesignGuidelineRules.ruleset",
-        "rulesets/legacy/ExtendedCorrectnessRules.ruleset",
-        "rulesets/legacy/ExtendedDesignGuidelineRules.ruleset",
-        "rulesets/legacy/GlobalizationRules.ruleset",
-        "rulesets/legacy/ManagedMinimumRules.ruleset",
-        "rulesets/legacy/MinimumRecommendedRules.ruleset",
-        "rulesets/legacy/SecurityRules.ruleset",
-        "tools/install.ps1",
-        "tools/uninstall.ps1"
-      ]
-    },
     "Microsoft.CodeAnalysis.Razor/2.1.1": {
       "sha512": "hc29VUVlF2t2TfOR3c5X2mun3h5KkswkarpWBffEG4iHoSdoEueo82dplwoXg9lH2vw0mK7VYPyawcKy6YHv3A==",
       "type": "package",
@@ -6096,58 +5983,6 @@
         "lib/netstandard2.0/Microsoft.CodeAnalysis.Razor.xml",
         "microsoft.codeanalysis.razor.2.1.1.nupkg.sha512",
         "microsoft.codeanalysis.razor.nuspec"
-      ]
-    },
-    "Microsoft.CodeAnalysis.VersionCheckAnalyzer/2.9.7": {
-      "sha512": "ePzHjOnn2EJCYubovr+lVPfkOx7yXjF9pNzE2TSZgAAC4zE4fNAL2HU/f+AoJWP0oQH1hohkApwfZPS+I82ynQ==",
-      "type": "package",
-      "path": "microsoft.codeanalysis.versioncheckanalyzer/2.9.7",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "EULA.rtf",
-        "ThirdPartyNotices.rtf",
-        "analyzers/dotnet/Microsoft.CodeAnalysis.VersionCheckAnalyzer.dll",
-        "analyzers/dotnet/cs/Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll",
-        "analyzers/dotnet/de/Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll",
-        "analyzers/dotnet/es/Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll",
-        "analyzers/dotnet/fr/Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll",
-        "analyzers/dotnet/it/Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll",
-        "analyzers/dotnet/ja/Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll",
-        "analyzers/dotnet/ko/Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll",
-        "analyzers/dotnet/pl/Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll",
-        "analyzers/dotnet/pt-BR/Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll",
-        "analyzers/dotnet/ru/Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll",
-        "analyzers/dotnet/tr/Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll",
-        "analyzers/dotnet/zh-Hans/Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll",
-        "analyzers/dotnet/zh-Hant/Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll",
-        "build/Microsoft.CodeAnalysis.VersionCheckAnalyzer.props",
-        "documentation/Analyzer Configuration.md",
-        "documentation/Microsoft.CodeAnalysis.VersionCheckAnalyzer.md",
-        "documentation/Microsoft.CodeAnalysis.VersionCheckAnalyzer.sarif",
-        "editorconfig/AllRulesDefault/.editorconfig",
-        "editorconfig/AllRulesDisabled/.editorconfig",
-        "editorconfig/AllRulesEnabled/.editorconfig",
-        "editorconfig/DataflowRulesDefault/.editorconfig",
-        "editorconfig/DataflowRulesEnabled/.editorconfig",
-        "editorconfig/PortedFromFxCopRulesDefault/.editorconfig",
-        "editorconfig/PortedFromFxCopRulesEnabled/.editorconfig",
-        "editorconfig/ReliabilityRulesDefault/.editorconfig",
-        "editorconfig/ReliabilityRulesEnabled/.editorconfig",
-        "microsoft.codeanalysis.versioncheckanalyzer.2.9.7.nupkg.sha512",
-        "microsoft.codeanalysis.versioncheckanalyzer.nuspec",
-        "rulesets/AllRulesDefault.ruleset",
-        "rulesets/AllRulesDisabled.ruleset",
-        "rulesets/AllRulesEnabled.ruleset",
-        "rulesets/DataflowRulesDefault.ruleset",
-        "rulesets/DataflowRulesEnabled.ruleset",
-        "rulesets/PortedFromFxCopRulesDefault.ruleset",
-        "rulesets/PortedFromFxCopRulesEnabled.ruleset",
-        "rulesets/ReliabilityRulesDefault.ruleset",
-        "rulesets/ReliabilityRulesEnabled.ruleset",
-        "tools/install.ps1",
-        "tools/uninstall.ps1"
       ]
     },
     "Microsoft.CodeAnalysis.Workspaces.Common/2.8.0": {
@@ -6168,104 +6003,6 @@
         "lib/netstandard1.3/Microsoft.CodeAnalysis.Workspaces.xml",
         "microsoft.codeanalysis.workspaces.common.2.8.0.nupkg.sha512",
         "microsoft.codeanalysis.workspaces.common.nuspec"
-      ]
-    },
-    "Microsoft.CodeQuality.Analyzers/2.9.7": {
-      "sha512": "gl+jYeGvFxET/FUL/gNMKMxb3/p3NKUofBpGS+wYna8Jphbm2Tx6DDZaqPcpcNpabZKzPAvezzmtW7EILTbZtA==",
-      "type": "package",
-      "path": "microsoft.codequality.analyzers/2.9.7",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "EULA.rtf",
-        "ThirdPartyNotices.rtf",
-        "analyzers/dotnet/cs/Humanizer.dll",
-        "analyzers/dotnet/cs/Microsoft.CodeQuality.Analyzers.dll",
-        "analyzers/dotnet/cs/Microsoft.CodeQuality.CSharp.Analyzers.dll",
-        "analyzers/dotnet/cs/cs/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/de/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/es/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/fr/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/it/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/ja/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/ko/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/pl/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/pt-BR/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/ru/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/tr/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/zh-Hans/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/zh-Hant/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/Humanizer.dll",
-        "analyzers/dotnet/vb/Microsoft.CodeQuality.Analyzers.dll",
-        "analyzers/dotnet/vb/Microsoft.CodeQuality.VisualBasic.Analyzers.dll",
-        "analyzers/dotnet/vb/cs/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/de/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/es/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/fr/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/it/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/ja/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/ko/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/pl/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/pt-BR/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/ru/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/tr/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/zh-Hans/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/zh-Hant/Microsoft.CodeQuality.Analyzers.resources.dll",
-        "build/Microsoft.CodeQuality.Analyzers.props",
-        "documentation/Analyzer Configuration.md",
-        "documentation/Microsoft.CodeQuality.Analyzers.md",
-        "documentation/Microsoft.CodeQuality.Analyzers.sarif",
-        "editorconfig/AllRulesDefault/.editorconfig",
-        "editorconfig/AllRulesDisabled/.editorconfig",
-        "editorconfig/AllRulesEnabled/.editorconfig",
-        "editorconfig/DataflowRulesDefault/.editorconfig",
-        "editorconfig/DataflowRulesEnabled/.editorconfig",
-        "editorconfig/DesignRulesDefault/.editorconfig",
-        "editorconfig/DesignRulesEnabled/.editorconfig",
-        "editorconfig/DocumentationRulesDefault/.editorconfig",
-        "editorconfig/DocumentationRulesEnabled/.editorconfig",
-        "editorconfig/MaintainabilityRulesDefault/.editorconfig",
-        "editorconfig/MaintainabilityRulesEnabled/.editorconfig",
-        "editorconfig/NamingRulesDefault/.editorconfig",
-        "editorconfig/NamingRulesEnabled/.editorconfig",
-        "editorconfig/PerformanceRulesDefault/.editorconfig",
-        "editorconfig/PerformanceRulesEnabled/.editorconfig",
-        "editorconfig/PortedFromFxCopRulesDefault/.editorconfig",
-        "editorconfig/PortedFromFxCopRulesEnabled/.editorconfig",
-        "editorconfig/ReliabilityRulesDefault/.editorconfig",
-        "editorconfig/ReliabilityRulesEnabled/.editorconfig",
-        "editorconfig/SecurityRulesDefault/.editorconfig",
-        "editorconfig/SecurityRulesEnabled/.editorconfig",
-        "editorconfig/UsageRulesDefault/.editorconfig",
-        "editorconfig/UsageRulesEnabled/.editorconfig",
-        "microsoft.codequality.analyzers.2.9.7.nupkg.sha512",
-        "microsoft.codequality.analyzers.nuspec",
-        "rulesets/AllRulesDefault.ruleset",
-        "rulesets/AllRulesDisabled.ruleset",
-        "rulesets/AllRulesEnabled.ruleset",
-        "rulesets/DataflowRulesDefault.ruleset",
-        "rulesets/DataflowRulesEnabled.ruleset",
-        "rulesets/DesignRulesDefault.ruleset",
-        "rulesets/DesignRulesEnabled.ruleset",
-        "rulesets/DocumentationRulesDefault.ruleset",
-        "rulesets/DocumentationRulesEnabled.ruleset",
-        "rulesets/MaintainabilityRulesDefault.ruleset",
-        "rulesets/MaintainabilityRulesEnabled.ruleset",
-        "rulesets/NamingRulesDefault.ruleset",
-        "rulesets/NamingRulesEnabled.ruleset",
-        "rulesets/PerformanceRulesDefault.ruleset",
-        "rulesets/PerformanceRulesEnabled.ruleset",
-        "rulesets/PortedFromFxCopRulesDefault.ruleset",
-        "rulesets/PortedFromFxCopRulesEnabled.ruleset",
-        "rulesets/ReliabilityRulesDefault.ruleset",
-        "rulesets/ReliabilityRulesEnabled.ruleset",
-        "rulesets/SecurityRulesDefault.ruleset",
-        "rulesets/SecurityRulesEnabled.ruleset",
-        "rulesets/UsageRulesDefault.ruleset",
-        "rulesets/UsageRulesEnabled.ruleset",
-        "tools/install.ps1",
-        "tools/uninstall.ps1"
       ]
     },
     "Microsoft.CSharp/4.5.0": {
@@ -6432,6 +6169,21 @@
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
+    "Microsoft.EntityFrameworkCore.Relational.Design/1.1.6": {
+      "sha512": "kz7C0Ddnge16NRf4CU8GygYxOor3+oQ797//eXI+xbKlJr2ighAEkno9gOipDlym4SiFtKNNuOuBI/BDBGD7Kg==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.relational.design/1.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net451/Microsoft.EntityFrameworkCore.Relational.Design.dll",
+        "lib/net451/Microsoft.EntityFrameworkCore.Relational.Design.xml",
+        "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll",
+        "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.xml",
+        "microsoft.entityframeworkcore.relational.design.1.1.6.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.design.nuspec"
+      ]
+    },
     "Microsoft.EntityFrameworkCore.SqlServer/2.1.1": {
       "sha512": "/J15ItbPu+YWmqCs7yDrXNSY9NooWv5sFKrV1aYvDjCi2Z4Ja8LOCQVNynJTjNxDfDihp+PPLD/HoD0e2iZD8Q==",
       "type": "package",
@@ -6443,6 +6195,21 @@
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.SqlServer.xml",
         "microsoft.entityframeworkcore.sqlserver.2.1.1.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.SqlServer.Design/1.1.6": {
+      "sha512": "nxdW1YfZtn3nbcFqIAbjo6vCbCNOx0g82qMv+9fTUsNTsW0KSENYc2pbjF3yO8ZqYdBjmx2gMfAGk6wjy5cldg==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.sqlserver.design/1.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net451/Microsoft.EntityFrameworkCore.SqlServer.Design.dll",
+        "lib/net451/Microsoft.EntityFrameworkCore.SqlServer.Design.xml",
+        "lib/netstandard1.3/Microsoft.EntityFrameworkCore.SqlServer.Design.dll",
+        "lib/netstandard1.3/Microsoft.EntityFrameworkCore.SqlServer.Design.xml",
+        "microsoft.entityframeworkcore.sqlserver.design.1.1.6.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlserver.design.nuspec"
       ]
     },
     "Microsoft.EntityFrameworkCore.Tools/2.1.1": {
@@ -7166,94 +6933,6 @@
         "microsoft.net.http.headers.nuspec"
       ]
     },
-    "Microsoft.NetCore.Analyzers/2.9.7": {
-      "sha512": "NYQOi5n+36rVuh+Yh6UabkzH5lNaji+OIArnzbY1jUp+u2CL9A7DatJGrh7u/VOZJICVFR3UgVKobm0CLbIcRg==",
-      "type": "package",
-      "path": "microsoft.netcore.analyzers/2.9.7",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "EULA.rtf",
-        "ThirdPartyNotices.rtf",
-        "analyzers/dotnet/cs/Microsoft.NetCore.Analyzers.dll",
-        "analyzers/dotnet/cs/Microsoft.NetCore.CSharp.Analyzers.dll",
-        "analyzers/dotnet/cs/cs/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/de/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/es/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/fr/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/it/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/ja/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/ko/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/pl/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/pt-BR/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/ru/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/tr/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/zh-Hans/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/zh-Hant/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/Microsoft.NetCore.Analyzers.dll",
-        "analyzers/dotnet/vb/Microsoft.NetCore.VisualBasic.Analyzers.dll",
-        "analyzers/dotnet/vb/cs/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/de/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/es/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/fr/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/it/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/ja/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/ko/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/pl/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/pt-BR/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/ru/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/tr/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/zh-Hans/Microsoft.NetCore.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/zh-Hant/Microsoft.NetCore.Analyzers.resources.dll",
-        "build/Microsoft.NetCore.Analyzers.props",
-        "documentation/Analyzer Configuration.md",
-        "documentation/Microsoft.NetCore.Analyzers.md",
-        "documentation/Microsoft.NetCore.Analyzers.sarif",
-        "editorconfig/AllRulesDefault/.editorconfig",
-        "editorconfig/AllRulesDisabled/.editorconfig",
-        "editorconfig/AllRulesEnabled/.editorconfig",
-        "editorconfig/DataflowRulesDefault/.editorconfig",
-        "editorconfig/DataflowRulesEnabled/.editorconfig",
-        "editorconfig/GlobalizationRulesDefault/.editorconfig",
-        "editorconfig/GlobalizationRulesEnabled/.editorconfig",
-        "editorconfig/InteroperabilityRulesDefault/.editorconfig",
-        "editorconfig/InteroperabilityRulesEnabled/.editorconfig",
-        "editorconfig/PerformanceRulesDefault/.editorconfig",
-        "editorconfig/PerformanceRulesEnabled/.editorconfig",
-        "editorconfig/PortedFromFxCopRulesDefault/.editorconfig",
-        "editorconfig/PortedFromFxCopRulesEnabled/.editorconfig",
-        "editorconfig/ReliabilityRulesDefault/.editorconfig",
-        "editorconfig/ReliabilityRulesEnabled/.editorconfig",
-        "editorconfig/SecurityRulesDefault/.editorconfig",
-        "editorconfig/SecurityRulesEnabled/.editorconfig",
-        "editorconfig/UsageRulesDefault/.editorconfig",
-        "editorconfig/UsageRulesEnabled/.editorconfig",
-        "microsoft.netcore.analyzers.2.9.7.nupkg.sha512",
-        "microsoft.netcore.analyzers.nuspec",
-        "rulesets/AllRulesDefault.ruleset",
-        "rulesets/AllRulesDisabled.ruleset",
-        "rulesets/AllRulesEnabled.ruleset",
-        "rulesets/DataflowRulesDefault.ruleset",
-        "rulesets/DataflowRulesEnabled.ruleset",
-        "rulesets/GlobalizationRulesDefault.ruleset",
-        "rulesets/GlobalizationRulesEnabled.ruleset",
-        "rulesets/InteroperabilityRulesDefault.ruleset",
-        "rulesets/InteroperabilityRulesEnabled.ruleset",
-        "rulesets/PerformanceRulesDefault.ruleset",
-        "rulesets/PerformanceRulesEnabled.ruleset",
-        "rulesets/PortedFromFxCopRulesDefault.ruleset",
-        "rulesets/PortedFromFxCopRulesEnabled.ruleset",
-        "rulesets/ReliabilityRulesDefault.ruleset",
-        "rulesets/ReliabilityRulesEnabled.ruleset",
-        "rulesets/SecurityRulesDefault.ruleset",
-        "rulesets/SecurityRulesEnabled.ruleset",
-        "rulesets/UsageRulesDefault.ruleset",
-        "rulesets/UsageRulesEnabled.ruleset",
-        "tools/install.ps1",
-        "tools/uninstall.ps1"
-      ]
-    },
     "Microsoft.NETCore.App/2.1.0": {
       "sha512": "JNHhG+j5eIhG26+H721IDmwswGUznTwwSuJMFe/08h0X2YarHvA15sVAvUkA/2Sp3W0ENNm48t+J7KTPRqEpfA==",
       "type": "package",
@@ -7596,121 +7275,49 @@
         "version.txt"
       ]
     },
-    "Microsoft.NetFramework.Analyzers/2.9.7": {
-      "sha512": "sC+Vt/m60axfe0jr8K3iXMXSwNhCp8jMJyn8gRMo9HDg2Nr7PpVGcNxqIt1rRbRiE6Lwqp8lo8AlFekHxvUCOg==",
+    "Microsoft.VisualStudio.Web.CodeGeneration/2.1.9": {
+      "sha512": "fnArZMBAlGUxuVIffEYoi+IsUR+rTQ/Mz+pIHyOnf5AHBJ5Jp1LvWQmyoWcs5k+Q0xXOhTNiJTvvwdw84H5rZA==",
       "type": "package",
-      "path": "microsoft.netframework.analyzers/2.9.7",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "EULA.rtf",
-        "ThirdPartyNotices.rtf",
-        "analyzers/dotnet/cs/Microsoft.NetFramework.Analyzers.dll",
-        "analyzers/dotnet/cs/Microsoft.NetFramework.CSharp.Analyzers.dll",
-        "analyzers/dotnet/cs/cs/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/de/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/es/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/fr/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/it/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/ja/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/ko/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/pl/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/pt-BR/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/ru/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/tr/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/zh-Hans/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/zh-Hant/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/Microsoft.NetFramework.Analyzers.dll",
-        "analyzers/dotnet/vb/Microsoft.NetFramework.VisualBasic.Analyzers.dll",
-        "analyzers/dotnet/vb/cs/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/de/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/es/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/fr/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/it/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/ja/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/ko/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/pl/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/pt-BR/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/ru/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/tr/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/zh-Hans/Microsoft.NetFramework.Analyzers.resources.dll",
-        "analyzers/dotnet/vb/zh-Hant/Microsoft.NetFramework.Analyzers.resources.dll",
-        "build/Microsoft.NetFramework.Analyzers.props",
-        "documentation/Analyzer Configuration.md",
-        "documentation/Microsoft.NetFramework.Analyzers.md",
-        "documentation/Microsoft.NetFramework.Analyzers.sarif",
-        "editorconfig/AllRulesDefault/.editorconfig",
-        "editorconfig/AllRulesDisabled/.editorconfig",
-        "editorconfig/AllRulesEnabled/.editorconfig",
-        "editorconfig/DataflowRulesDefault/.editorconfig",
-        "editorconfig/DataflowRulesEnabled/.editorconfig",
-        "editorconfig/DesignRulesDefault/.editorconfig",
-        "editorconfig/DesignRulesEnabled/.editorconfig",
-        "editorconfig/PortedFromFxCopRulesDefault/.editorconfig",
-        "editorconfig/PortedFromFxCopRulesEnabled/.editorconfig",
-        "editorconfig/SecurityRulesDefault/.editorconfig",
-        "editorconfig/SecurityRulesEnabled/.editorconfig",
-        "microsoft.netframework.analyzers.2.9.7.nupkg.sha512",
-        "microsoft.netframework.analyzers.nuspec",
-        "rulesets/AllRulesDefault.ruleset",
-        "rulesets/AllRulesDisabled.ruleset",
-        "rulesets/AllRulesEnabled.ruleset",
-        "rulesets/DataflowRulesDefault.ruleset",
-        "rulesets/DataflowRulesEnabled.ruleset",
-        "rulesets/DesignRulesDefault.ruleset",
-        "rulesets/DesignRulesEnabled.ruleset",
-        "rulesets/PortedFromFxCopRulesDefault.ruleset",
-        "rulesets/PortedFromFxCopRulesEnabled.ruleset",
-        "rulesets/SecurityRulesDefault.ruleset",
-        "rulesets/SecurityRulesEnabled.ruleset",
-        "tools/install.ps1",
-        "tools/uninstall.ps1"
-      ]
-    },
-    "Microsoft.VisualStudio.Web.CodeGeneration/2.1.10": {
-      "sha512": "HCIqKUjVJiq5PN2vngvVz8e4/GLl1gqUwdUXPObF4xAQUTdlutfA8OTcjaIEF1YzAR95tbzCAwD15L3d6LLhrQ==",
-      "type": "package",
-      "path": "microsoft.visualstudio.web.codegeneration/2.1.10",
+      "path": "microsoft.visualstudio.web.codegeneration/2.1.9",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.dll",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.xml",
-        "microsoft.visualstudio.web.codegeneration.2.1.10.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.2.1.9.nupkg.sha512",
         "microsoft.visualstudio.web.codegeneration.nuspec"
       ]
     },
-    "Microsoft.VisualStudio.Web.CodeGeneration.Contracts/2.1.10": {
-      "sha512": "oEiesUAQqG1XaigyqRmwVk0oSEFxnZdz6M4+xqj+Ju/dGghktqJVYJOdlCpdsZTZP4s/tntt+mFbomuKBi5SRA==",
+    "Microsoft.VisualStudio.Web.CodeGeneration.Contracts/2.1.9": {
+      "sha512": "rLQcbV5lbWi1pSTnPk5FAKW9AVi7VP3WVXj5vrzI8M1PlnAXn2LipA3biumlDcDOwCHrLth61I5JnRiqgFi+nA==",
       "type": "package",
-      "path": "microsoft.visualstudio.web.codegeneration.contracts/2.1.10",
+      "path": "microsoft.visualstudio.web.codegeneration.contracts/2.1.9",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.xml",
-        "microsoft.visualstudio.web.codegeneration.contracts.2.1.10.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.contracts.2.1.9.nupkg.sha512",
         "microsoft.visualstudio.web.codegeneration.contracts.nuspec"
       ]
     },
-    "Microsoft.VisualStudio.Web.CodeGeneration.Core/2.1.10": {
-      "sha512": "JN5NlZlqMryeA8kXDgWsyrS3O3bGVDLfLgsUIT2baLFMIQOrLOPx3HCKSvH5hOS+J4KtHu9PXm8X91QILKMIxQ==",
+    "Microsoft.VisualStudio.Web.CodeGeneration.Core/2.1.9": {
+      "sha512": "zL3c+GzGhyN9ycpL/uBEcYe+mvNGyVFIOXwdzROVgOLt6j6ceFvSL38Vdq/ISUz6OFdkBPdIo71Qct8M9Z1QNg==",
       "type": "package",
-      "path": "microsoft.visualstudio.web.codegeneration.core/2.1.10",
+      "path": "microsoft.visualstudio.web.codegeneration.core/2.1.9",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.xml",
-        "microsoft.visualstudio.web.codegeneration.core.2.1.10.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.core.2.1.9.nupkg.sha512",
         "microsoft.visualstudio.web.codegeneration.core.nuspec"
       ]
     },
-    "Microsoft.VisualStudio.Web.CodeGeneration.Design/2.1.10": {
-      "sha512": "IqUmvUZ9QCBkwJZxUrpRB1t/luIOnF1cVCkQ2fHP6v/pz1/2BP0A2DGrCpGQZJNgMSTFqvvcSUpI5ehIDvFWlA==",
+    "Microsoft.VisualStudio.Web.CodeGeneration.Design/2.1.9": {
+      "sha512": "hoMP2Sr2AZF00niWLXXjHM8275c7e11f0P7PlRS3j/ETG6wizByADxRF2Q2Yb/PUhg/hXRwfj4u3vS/sxcqJJw==",
       "type": "package",
-      "path": "microsoft.visualstudio.web.codegeneration.design/2.1.10",
+      "path": "microsoft.visualstudio.web.codegeneration.design/2.1.9",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -7718,7 +7325,7 @@
         "lib/net461/dotnet-aspnet-codegenerator-design.xml",
         "lib/netstandard2.0/dotnet-aspnet-codegenerator-design.dll",
         "lib/netstandard2.0/dotnet-aspnet-codegenerator-design.xml",
-        "microsoft.visualstudio.web.codegeneration.design.2.1.10.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.design.2.1.9.nupkg.sha512",
         "microsoft.visualstudio.web.codegeneration.design.nuspec",
         "runtimes/win-arm/lib/net461/dotnet-aspnet-codegenerator-design.exe",
         "runtimes/win-arm/lib/net461/dotnet-aspnet-codegenerator-design.xml",
@@ -7730,50 +7337,50 @@
         "runtimes/win7-x86/lib/net461/dotnet-aspnet-codegenerator-design.xml"
       ]
     },
-    "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore/2.1.10": {
-      "sha512": "B+vOry1z9hCnj1K3ZHWil1iKXpJfAQ57kwctvXTCLh5z92NMK4IwAS2hud4I/Viksz1M1YMPgDSCUf6q+Ywawg==",
+    "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore/2.1.9": {
+      "sha512": "P9qpgTmOHb7odcAo/EqbaofUlaM8JcYu9d5wewX5ZbJMn5GcbnjDQhg5LF7DoKkcpLBCUiXG04F7lqBcsZqtUA==",
       "type": "package",
-      "path": "microsoft.visualstudio.web.codegeneration.entityframeworkcore/2.1.10",
+      "path": "microsoft.visualstudio.web.codegeneration.entityframeworkcore/2.1.9",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Templates/DbContext/NewLocalDbContext.cshtml",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.xml",
-        "microsoft.visualstudio.web.codegeneration.entityframeworkcore.2.1.10.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.entityframeworkcore.2.1.9.nupkg.sha512",
         "microsoft.visualstudio.web.codegeneration.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.VisualStudio.Web.CodeGeneration.Templating/2.1.10": {
-      "sha512": "9DarhKUfbHUiFjim9y4FySfvdHZKaQB7WcR5AOwEYMRiIur6NxNKqH+n/Ljje/9WlWpdTVPTDePj5TZWHlzvcQ==",
+    "Microsoft.VisualStudio.Web.CodeGeneration.Templating/2.1.9": {
+      "sha512": "Vuw0yVKRfj/3/jcFdvJEULf+fu2VoeA/loEyX5wfj2EzFc+lpEQ+6vIvvKCc6gtjh/O3MsZZxtFGFcWcDrNK/g==",
       "type": "package",
-      "path": "microsoft.visualstudio.web.codegeneration.templating/2.1.10",
+      "path": "microsoft.visualstudio.web.codegeneration.templating/2.1.9",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Templating.xml",
-        "microsoft.visualstudio.web.codegeneration.templating.2.1.10.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.templating.2.1.9.nupkg.sha512",
         "microsoft.visualstudio.web.codegeneration.templating.nuspec"
       ]
     },
-    "Microsoft.VisualStudio.Web.CodeGeneration.Utils/2.1.10": {
-      "sha512": "HvhLvuEaFfDUT5lmpNZJufPBmxK/i3himNz14JqEwakCScPfeJFQfuIigjQ0AAte7ssRHQl6PT72++aFpc2XmA==",
+    "Microsoft.VisualStudio.Web.CodeGeneration.Utils/2.1.9": {
+      "sha512": "HGtpCMW7GEPygFaNjzE/zPt5zP9e7u8galmYQoR3taGL+2JRFDx9P5xd2jsRxlQUdNB0GVf/0OHxjeLJJYWJBw==",
       "type": "package",
-      "path": "microsoft.visualstudio.web.codegeneration.utils/2.1.10",
+      "path": "microsoft.visualstudio.web.codegeneration.utils/2.1.9",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.xml",
-        "microsoft.visualstudio.web.codegeneration.utils.2.1.10.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.utils.2.1.9.nupkg.sha512",
         "microsoft.visualstudio.web.codegeneration.utils.nuspec"
       ]
     },
-    "Microsoft.VisualStudio.Web.CodeGenerators.Mvc/2.1.10": {
-      "sha512": "PKKvTxC/isyZjRtFSSfbzFlFNvLUL1JjEGex3YJQXhwGhGplIAQkDvm1PQDl9AgvrLtKv0OnUG80uq5p2I+4CA==",
+    "Microsoft.VisualStudio.Web.CodeGenerators.Mvc/2.1.9": {
+      "sha512": "bmqEQaGpXME9ErK6N+Ew3g7hia2t5tJeARZYrD6T21TT/2+OIwDrVuI3cu9RpeoLWXJa76eqcyC7tC+SYGfIZA==",
       "type": "package",
-      "path": "microsoft.visualstudio.web.codegenerators.mvc/2.1.10",
+      "path": "microsoft.visualstudio.web.codegenerators.mvc/2.1.9",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -7927,7 +7534,7 @@
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.xml",
         "lib/netstandard2.0/identitygeneratorfilesconfig.json",
-        "microsoft.visualstudio.web.codegenerators.mvc.2.1.10.nupkg.sha512",
+        "microsoft.visualstudio.web.codegenerators.mvc.2.1.9.nupkg.sha512",
         "microsoft.visualstudio.web.codegenerators.mvc.nuspec"
       ]
     },
@@ -12986,16 +12593,14 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "DataAnnotationsExtensions >= 5.0.1.27",
       "Microsoft.AspNetCore.App >= 2.1.1",
-      "Microsoft.AspNetCore.Identity >= 2.1.1",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
-      "Microsoft.CodeAnalysis.FxCopAnalyzers >= 2.9.7",
-      "Microsoft.EntityFrameworkCore >= 2.1.1",
+      "Microsoft.EntityFrameworkCore.Design >= 2.1.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.1.1",
+      "Microsoft.EntityFrameworkCore.SqlServer.Design >= 1.1.6",
       "Microsoft.NETCore.App >= 2.1.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.10"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.9"
     ]
   },
   "packageFolders": {
@@ -13042,19 +12647,11 @@
     "frameworks": {
       "netcoreapp2.1": {
         "dependencies": {
-          "DataAnnotationsExtensions": {
-            "target": "Package",
-            "version": "[5.0.1.27, )"
-          },
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.1, )",
             "autoReferenced": true
-          },
-          "Microsoft.AspNetCore.Identity": {
-            "target": "Package",
-            "version": "[2.1.1, )"
           },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
@@ -13065,19 +12662,17 @@
             "target": "Package",
             "version": "[2.1.2, )"
           },
-          "Microsoft.CodeAnalysis.FxCopAnalyzers": {
-            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[2.9.7, )"
-          },
-          "Microsoft.EntityFrameworkCore": {
+          "Microsoft.EntityFrameworkCore.Design": {
             "target": "Package",
             "version": "[2.1.1, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[2.1.1, )"
+          },
+          "Microsoft.EntityFrameworkCore.SqlServer.Design": {
+            "target": "Package",
+            "version": "[1.1.6, )"
           },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
@@ -13087,7 +12682,7 @@
           },
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
-            "version": "[2.1.10, )"
+            "version": "[2.1.9, )"
           }
         },
         "imports": [
@@ -13103,17 +12698,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'DataAnnotationsExtensions 5.0.1.27' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
-      "libraryId": "DataAnnotationsExtensions",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.1"
-      ]
-    }
-  ]
+  }
 }

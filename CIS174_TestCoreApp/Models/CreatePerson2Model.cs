@@ -8,7 +8,6 @@ namespace CIS174_TestCoreApp.Models
 {
     public class CreatePerson2Model
     {
-
         [Required]
         [StringLength(25)]
         [Display(Name = "First Name")]

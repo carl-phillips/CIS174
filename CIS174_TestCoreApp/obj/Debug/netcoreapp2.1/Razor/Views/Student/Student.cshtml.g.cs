@@ -199,7 +199,7 @@ using CIS174_TestCoreApp.Models.ManageViewModels;
             WriteLiteral("        </div>\r\n    </div>\r\n</div>\r\n\r\n<div>\r\n    ");
             EndContext();
             BeginContext(1778, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6e1cd6fb87ae44acaf4a44ea82dded9d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8cdcdddbf1c4f429cf51313a757d7cd", async() => {
                 BeginContext(1800, 12, true);
                 WriteLiteral("Back to List");
                 EndContext();

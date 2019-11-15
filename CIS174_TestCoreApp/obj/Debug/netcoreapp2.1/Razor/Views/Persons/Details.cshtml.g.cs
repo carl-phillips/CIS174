@@ -74,7 +74,7 @@ using CIS174_TestCoreApp.Models.ManageViewModels;
             WriteLiteral("\r\n<!DOCTYPE html>\r\n\r\n<html>\r\n");
             EndContext();
             BeginContext(72, 102, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "107d64419cbe4f09b3433ebbde4aa2d3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b5b27e561b1b465084c43488fe4f1a52", async() => {
                 BeginContext(78, 89, true);
                 WriteLiteral("\r\n    <meta name=\"viewport\" content=\"width=device-width\" />\r\n    <title>Details</title>\r\n");
                 EndContext();
@@ -94,7 +94,7 @@ using CIS174_TestCoreApp.Models.ManageViewModels;
             WriteLiteral("\r\n<br />\r\n");
             EndContext();
             BeginContext(184, 1318, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a1ab465b38aa4932ac38b7fe46925888", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8f4fe0b2229d4a878a7939431607d49a", async() => {
                 BeginContext(190, 102, true);
                 WriteLiteral("\r\n\r\n<div>\r\n    <h4>Person</h4>\r\n    <hr />\r\n    <dl class=\"dl-horizontal\">\r\n        <dt>\r\n            ");
                 EndContext();
@@ -219,7 +219,7 @@ using CIS174_TestCoreApp.Models.ManageViewModels;
                 WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n<div>\r\n    ");
                 EndContext();
                 BeginContext(1340, 75, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "278a5ca7633b41c8974a7cc7a03b25fb", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8e7a77fd63ca4649b117326a374be088", async() => {
                     BeginContext(1407, 4, true);
                     WriteLiteral("Edit");
                     EndContext();
@@ -255,7 +255,7 @@ using CIS174_TestCoreApp.Models.ManageViewModels;
                 WriteLiteral(" |\r\n    ");
                 EndContext();
                 BeginContext(1423, 62, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fecd891beb5c48aba7620c1120e5fcc2", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dc177b93460f4f548d42abb5e2a49579", async() => {
                     BeginContext(1469, 12, true);
                     WriteLiteral("Back to List");
                     EndContext();

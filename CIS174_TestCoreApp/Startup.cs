@@ -43,6 +43,8 @@ namespace CIS174_TestCoreApp
             services.AddScoped<ErrorLogContext>();
             services.AddDbContext<LogContext>();
             services.AddScoped<LogContext>();
+            services.AddDbContext<ApplicationDbContext>();
+            services.AddScoped<ApplicationDbContext>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {
