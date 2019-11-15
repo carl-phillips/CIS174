@@ -1,5 +1,7 @@
-﻿using CIS174_TestCoreApp.Entities;
+﻿using System.Collections.Generic;
+using CIS174_TestCoreApp.Entities;
 using Microsoft.EntityFrameworkCore;
+using CIS174_TestCoreApp.Models;
 
 namespace CIS174_TestCoreApp
 {
@@ -16,6 +18,12 @@ namespace CIS174_TestCoreApp
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlServer(@"Server=tcp:cis174person.database.windows.net,1433;Initial Catalog=CIS174.10;Persist Security Info=False;User ID=carl;Password=Xukw6774/;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+
+        public DbSet<CIS174_TestCoreApp.Models.PersonsAccomplishments> PersonsAccomplishments { get; set; }
+
+        public DbSet<CIS174_TestCoreApp.Models.FamousPerson> FamousPerson { get; set; }
+
+        public DbSet<CIS174_TestCoreApp.Models.UpdatePerson> UpdatePerson { get; set; }
 
     }
 }

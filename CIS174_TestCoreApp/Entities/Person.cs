@@ -18,6 +18,8 @@ namespace CIS174_TestCoreApp.Entities
         public string City { get; set; }
         [StringLength(50)]
         public string State { get; set; }
+        public bool IsDeleted { get; set; }
         public ICollection<Accomplishment> SetOfAccomplishments { get; set; }
+
     }
 }

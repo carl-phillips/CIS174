@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CIS174_TestCoreApp.Models;
 using CIS174_TestCoreApp.Filters;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CIS174_TestCoreApp.Controllers
 {
@@ -17,6 +18,11 @@ namespace CIS174_TestCoreApp.Controllers
             return View();
         }
 
+        [Authorize]
+        public IActionResult AuthedUsersOnly()
+        {
+            return View();
+        }
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
