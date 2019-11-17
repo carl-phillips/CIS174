@@ -20,6 +20,6 @@ namespace CIS174_TestCoreApp.Entities
         public string State { get; set; }
         public bool IsDeleted { get; set; }
         public ICollection<Accomplishment> SetOfAccomplishments { get; set; }
-
+        public string CreatedById { get; set; }
     }
 }

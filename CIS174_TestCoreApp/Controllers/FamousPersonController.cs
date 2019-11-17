@@ -28,7 +28,7 @@ namespace CIS174_TestCoreApp.Controllers
         }
 
         //GET: FamousPerson
-        public ActionResult Index()
+        public IActionResult Index()
         {
             var models = _service.GetPeople();
 
@@ -39,20 +39,20 @@ namespace CIS174_TestCoreApp.Controllers
         public IActionResult Accomplishments()
         {
             var model = _service.GetAccomplishments();
-
+            
             return View(model);
         }
 
         //GET: FamousPerson/Details/5
         [Authorize]
-        public ActionResult Details(int id)
+        public IActionResult Details(int id)
         {
             return View();
         }
 
 
         // GET: FamousPerson/Create
-        public ActionResult Create()
+        public IActionResult Create()
         {
             return View();
         }
@@ -60,7 +60,7 @@ namespace CIS174_TestCoreApp.Controllers
         // POST: FamousPerson/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public IActionResult Create(IFormCollection collection)
         {
             try
             {
@@ -75,7 +75,7 @@ namespace CIS174_TestCoreApp.Controllers
         }
 
         // GET: FamousPerson/Edit/5
-        public ActionResult Edit(int id)
+        public IActionResult Edit(int id)
         {
             return View();
         }
@@ -83,7 +83,7 @@ namespace CIS174_TestCoreApp.Controllers
         // POST: FamousPerson/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public IActionResult Edit(int id, IFormCollection collection)
         {
             try
             {
@@ -98,7 +98,7 @@ namespace CIS174_TestCoreApp.Controllers
         }
 
         // GET: FamousPerson/Delete/5
-        public ActionResult Delete(int id)
+        public IActionResult Delete(int id)
         {
             return View();
         }
@@ -106,7 +106,7 @@ namespace CIS174_TestCoreApp.Controllers
         // POST: FamousPerson/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public IActionResult Delete(int id, IFormCollection collection)
         {
             try
             {

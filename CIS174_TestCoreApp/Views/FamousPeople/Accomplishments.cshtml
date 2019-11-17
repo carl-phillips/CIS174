@@ -1,7 +1,7 @@
-﻿@model CIS174_TestCoreApp.Models.PersonsAccomplishments
-
+﻿@model ICollection<CIS174_TestCoreApp.Models.PersonsAccomplishments>
 @{
-    Layout = null;
+    ViewData["Title"] = "Menus";
+
 }
 
 <!DOCTYPE html>
@@ -13,32 +13,28 @@
 </head>
 <body>
 
+    <div class="table-responsive">
+        <table class="table table-striped recipe">
+            <thead>
+                <tr>
+                    <th>Accomplishment Name</th>
+                    <th>Accomplishment Date</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var accomplishment in Model)
+                {
+                    <tr>
+                        <td>@accomplishment.Name</td>
+                        <td>@accomplishment.DateOfAccomplishment</td>
+                        <td><a asp-action="View" asp-route-id="@accomplishment.PersonId" class="btn">View</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 <div>
-    <h4>PersonsAccomplishments</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.PersonId)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.PersonId)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DateOfAccomplishment)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DateOfAccomplishment)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
 </body>

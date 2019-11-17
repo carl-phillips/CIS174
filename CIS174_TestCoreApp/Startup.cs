@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using CIS174_TestCoreApp.Data;
 using CIS174_TestCoreApp.Models;
 using CIS174_TestCoreApp.Services;
+using CIS174_TestCoreApp.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -45,6 +47,8 @@ namespace CIS174_TestCoreApp
             services.AddScoped<LogContext>();
             services.AddDbContext<ApplicationDbContext>();
             services.AddScoped<ApplicationDbContext>();
+            services.AddScoped<PersonService>();
+            services.AddScoped<IAuthorizationHandler, IsAdminHandler>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -64,8 +68,7 @@ namespace CIS174_TestCoreApp
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseAuthentication();
-
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -79,6 +82,7 @@ namespace CIS174_TestCoreApp
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
@@ -107,7 +111,13 @@ namespace CIS174_TestCoreApp
                     name: "persons",
                     template: "{controller=Persons}/{action=Index}");
             });
-            
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "famouspeople",
+                    template: "{controller=FamousPeople}/{action=Accomplishments}");
+            });
         }
     }
 }
