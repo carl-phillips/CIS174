@@ -246,7 +246,6 @@ C:\Users\Carl\Documents\GitHub\CIS174\CIS174_TestCoreApp\bin\Debug\netcoreapp2.1
 C:\Users\Carl\Documents\GitHub\CIS174\CIS174_TestCoreApp\obj\Debug\netcoreapp2.1\CIS174_TestCoreApp.csprojAssemblyReference.cache
 C:\Users\Carl\Documents\GitHub\CIS174\CIS174_TestCoreApp\obj\Debug\netcoreapp2.1\CIS174_TestCoreApp.RazorAssemblyInfo.cache
 C:\Users\Carl\Documents\GitHub\CIS174\CIS174_TestCoreApp\obj\Debug\netcoreapp2.1\CIS174_TestCoreApp.RazorAssemblyInfo.cs
-C:\Users\Carl\Documents\GitHub\CIS174\CIS174_TestCoreApp\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
 C:\Users\Carl\Documents\GitHub\CIS174\CIS174_TestCoreApp\obj\Debug\netcoreapp2.1\CIS174_TestCoreApp.AssemblyInfoInputs.cache
 C:\Users\Carl\Documents\GitHub\CIS174\CIS174_TestCoreApp\obj\Debug\netcoreapp2.1\CIS174_TestCoreApp.AssemblyInfo.cs
 C:\Users\Carl\Documents\GitHub\CIS174\CIS174_TestCoreApp\obj\Debug\netcoreapp2.1\CIS174_TestCoreApp.TagHelpers.input.cache

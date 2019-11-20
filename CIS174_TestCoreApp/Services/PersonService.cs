@@ -20,9 +20,11 @@ namespace CIS174_TestCoreApp.Services
             _personContext = personContext;
             _logger = factory.CreateLogger<PersonService>();
         }
-
+        
         public ICollection<FamousPerson> GetPeople()
         {
+            _logger.LogInformation("Loading famous people information");
+
             return _personContext.Persons
                 .Where(p => !p.IsDeleted)
                 .Select(p => new FamousPerson
@@ -37,6 +39,8 @@ namespace CIS174_TestCoreApp.Services
 
         public ICollection<PersonsAccomplishments> GetAccomplishments()
         {
+            _logger.LogInformation("Loading accomplishments");
+
             return _personContext.Accomplishments
                 .Select(a => new PersonsAccomplishments
                 {
@@ -49,6 +53,8 @@ namespace CIS174_TestCoreApp.Services
 
         public bool IsNameCorrect(string first, string last)
         {
+            _logger.LogInformation("Checking if name is correct");
+
             return _personContext.Persons
                 .Where(r => !r.IsDeleted)
                 .Where(r => r.FirstName == first)
@@ -58,6 +64,8 @@ namespace CIS174_TestCoreApp.Services
 
         public UpdatePerson GetPersonForUpdate(int Id)
         {
+            _logger.LogInformation("Getting person for update, ID: ", Id);
+
             return _personContext.Persons
                 .Where(x => x.Id == Id)
                 .Where(x => !x.IsDeleted)
@@ -74,6 +82,8 @@ namespace CIS174_TestCoreApp.Services
 
         public int CreatePerson(CreatePerson cmd)
         {
+            _logger.LogInformation("Creating person");
+
             var person = cmd.ToPerson();
             _personContext.Add(person);
             _personContext.SaveChanges();
@@ -142,9 +152,18 @@ namespace CIS174_TestCoreApp.Services
         public void UpdatePerson(UpdatePerson cmd)
         {
             var person = _personContext.Persons.Find(cmd.Id);
-            if (person == null) { throw new Exception("Unable to find the person"); }
-            if (person.IsDeleted) { throw new Exception("Unable to update a deleted person"); }
+            if (person == null) 
+            {
+                _logger.LogError("This is no person with ID: ", cmd.Id);
+                throw new Exception("Unable to find the person"); 
+            }
+            if (person.IsDeleted) 
+            {
+                _logger.LogError("Unable to update deleted person with ID: ", cmd.Id);
+                throw new Exception("Unable to update a deleted person"); 
+            }
 
+            _logger.LogInformation("Getting information for person with ID: ", cmd.Id);
             cmd.UpdatePersons(person);
             _personContext.SaveChanges();
         }
@@ -154,6 +173,7 @@ namespace CIS174_TestCoreApp.Services
             var person = _personContext.Persons.Find(id);
             if (person.IsDeleted) { throw new Exception("Unable to delete a deleted person"); }
 
+            _logger.LogInformation("Deleting person with ID: ", id);
             person.IsDeleted = true;
             _personContext.SaveChanges();
         }
@@ -164,6 +184,7 @@ namespace CIS174_TestCoreApp.Services
 
             if (person == null)
             {
+                _logger.LogWarning("This person does not exist, ID: ", id);
                 return false;
             }
 

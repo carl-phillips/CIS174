@@ -2,6 +2,7 @@
 using CIS174_TestCoreApp.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -15,11 +16,14 @@ namespace CIS174_TestCoreApp.Filters
         public int Order => -1;
         public bool isEnabled { get; set; }
 
+        private ILogger _log;
+
         private readonly LogContext _logContext;
 
         public void OnResourceExecuted(ResourceExecutedContext context)
         {
             Debug.WriteLine("LOGFILTER Executed");
+           
             Log log = new Log
             {
                 HttpStatusCode = context.HttpContext.Response.StatusCode,
@@ -28,6 +32,8 @@ namespace CIS174_TestCoreApp.Filters
                 Request = context.HttpContext.Request.Scheme,
                 Response = context.HttpContext.Response.ContentType
             };
+
+            _log.LogInformation("Http Code: " + log.HttpStatusCode + "\nTime Of Log: " + log.TimeOfLog + "\nRequestId: " + log.RequestId);
 
             LogContext logContext = new LogContext();
             
@@ -40,6 +46,7 @@ namespace CIS174_TestCoreApp.Filters
 
         public void OnResourceExecuting(ResourceExecutingContext context)
         {
+            _log.LogInformation("LOGFILTER Executing");
             Debug.WriteLine("LOGFILTER Executing");
         }
     }
