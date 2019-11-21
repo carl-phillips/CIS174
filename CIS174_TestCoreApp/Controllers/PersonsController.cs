@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using CIS174_TestCoreApp;
 using CIS174_TestCoreApp.Entities;
 using CIS174_TestCoreApp.Filters;
+using Microsoft.Extensions.Logging;
+using CIS174_TestCoreApp.Models;
 
 namespace CIS174_TestCoreApp.Controllers.api
 {
@@ -15,15 +17,18 @@ namespace CIS174_TestCoreApp.Controllers.api
     public class PersonsController : Controller
     {
         private readonly PersonContext _context;
+        private readonly ILogger<PersonsController> _log;
 
-        public PersonsController(PersonContext context)
+        public PersonsController(PersonContext context, ILogger<PersonsController> log)
         {
             _context = context;
+            _log = log;
         }
 
         // GET: Persons
         public async Task<IActionResult> Index()
         {
+            _log.LogInformation("Getting persons to display");
             return View(await _context.Persons.ToListAsync());
         }
 
@@ -32,6 +37,7 @@ namespace CIS174_TestCoreApp.Controllers.api
         {
             if (id == null)
             {
+                _log.LogWarning("The ID field is null, cannot search");
                 return NotFound();
             }
 
@@ -39,16 +45,18 @@ namespace CIS174_TestCoreApp.Controllers.api
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (person == null)
             {
+                _log.LogWarning("There is no person with ID {id}", id);
                 return NotFound();
             }
 
+            _log.LogInformation("Found person with ID {id}", id);
             return View(person);
         }
 
         // GET: Persons/Create
         public IActionResult Create()
         {
-            return View();
+            return View(new CreatePerson());
         }
 
         // POST: Persons/Create
@@ -60,10 +68,12 @@ namespace CIS174_TestCoreApp.Controllers.api
         {
             if (ModelState.IsValid)
             {
+                _log.LogInformation("Creating person");
                 _context.Add(person);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            _log.LogWarning("The Model State to create a person was not valid");
             return View(person);
         }
 
@@ -72,12 +82,14 @@ namespace CIS174_TestCoreApp.Controllers.api
         {
             if (id == null)
             {
+                _log.LogInformation("The id field is null, cannot edit");
                 return NotFound();
             }
 
             var person = await _context.Persons.FindAsync(id);
             if (person == null)
             {
+                _log.LogWarning("The person you are trying to edit does not exist, ID {id}", id);
                 return NotFound();
             }
             return View(person);
@@ -114,6 +126,7 @@ namespace CIS174_TestCoreApp.Controllers.api
                     }
                     else
                     {
+                        _log.LogWarning("The person does not exist, ID {id}", id);
                         throw;
                     }
                 }
@@ -127,6 +140,7 @@ namespace CIS174_TestCoreApp.Controllers.api
         {
             if (id == null)
             {
+                _log.LogWarning("The id is null, cannot delete");
                 return NotFound();
             }
 
@@ -134,9 +148,11 @@ namespace CIS174_TestCoreApp.Controllers.api
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (person == null)
             {
+                _log.LogWarning("The person you are trying to delete does not exist, ID {id}", id);
                 return NotFound();
             }
 
+            _log.LogInformation("Deleted person with ID {id}", id);
             return View(person);
         }
 
@@ -148,6 +164,7 @@ namespace CIS174_TestCoreApp.Controllers.api
             var person = await _context.Persons.FindAsync(id);
             _context.Persons.Remove(person);
             //await _context.SaveChangesAsync();
+            _log.LogInformation("Deletion of person with ID {id}, has been confirmed", id);
             return RedirectToAction(nameof(Index));
         }
 

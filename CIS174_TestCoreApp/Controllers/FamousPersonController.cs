@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace CIS174_TestCoreApp.Controllers
 {
@@ -16,15 +17,18 @@ namespace CIS174_TestCoreApp.Controllers
         private readonly PersonService _service;
         private readonly UserManager<ApplicationUser> _userService;
         private readonly IAuthorizationService _authService;
+        private readonly ILogger _log;
 
         public FamousPersonController(
             PersonService service,
             UserManager<ApplicationUser> userService,
-            IAuthorizationService authService)
+            IAuthorizationService authService,
+            ILogger log)
         {
             _service = service;
             _userService = userService;
             _authService = authService;
+            _log = log;
         }
 
         //GET: FamousPerson
@@ -49,7 +53,6 @@ namespace CIS174_TestCoreApp.Controllers
         {
             return View();
         }
-
 
         // GET: FamousPerson/Create
         public IActionResult Create()

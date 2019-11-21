@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace CIS174_TestCoreApp
 {
@@ -66,7 +67,7 @@ namespace CIS174_TestCoreApp
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             
             if (env.IsDevelopment())
@@ -83,6 +84,9 @@ namespace CIS174_TestCoreApp
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseAuthentication();
+
+            ILogger logger = loggerFactory.CreateLogger<Program>();
+            logger.LogInformation("Log message");
 
             app.UseMvc(routes =>
             {

@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using CIS174_TestCoreApp;
 using CIS174_TestCoreApp.Entities;
 using CIS174_TestCoreApp.Filters;
+using Microsoft.Extensions.Logging;
 
 namespace CIS174_TestCoreApp.Controllers.api
 {
@@ -20,16 +21,19 @@ namespace CIS174_TestCoreApp.Controllers.api
     {
 
         private readonly PersonContext _context;
+        private ILogger<PeopleController> _logger;
 
-        public PeopleController(PersonContext context, LogContext logContext)
+        public PeopleController(PersonContext context, LogContext logContext, ILogger<PeopleController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: api/People
         [HttpGet]
         public IEnumerable<Person> GetPersons()
         {
+            _logger.LogInformation("Getting persons to display");
             return _context.Persons;
         }
 
@@ -40,6 +44,11 @@ namespace CIS174_TestCoreApp.Controllers.api
         public async Task<IActionResult> GetPerson([FromRoute] int id)
         {
             var person = await _context.Persons.FindAsync(id);
+            if(person == null)
+            {
+                _logger.LogWarning("Person with ID: {PersonId} not found", id);
+                return NotFound();
+            }
 
             return Ok(person);
         }
@@ -53,6 +62,7 @@ namespace CIS174_TestCoreApp.Controllers.api
 
             if (id != person.Id)
             {
+                _logger.LogWarning("ID {id} does not equal person ID", id);
                 return BadRequest();
             }
 
@@ -66,6 +76,7 @@ namespace CIS174_TestCoreApp.Controllers.api
             {
                 if (!PersonExists(id))
                 {
+                    _logger.LogWarning("Could not put person with ID {id}", id);
                     return NotFound();
                 }
                 else
@@ -73,7 +84,7 @@ namespace CIS174_TestCoreApp.Controllers.api
                     throw;
                 }
             }
-
+            _logger.LogInformation("Put person with ID {id}", id);
             return NoContent();
         }
 
@@ -86,6 +97,7 @@ namespace CIS174_TestCoreApp.Controllers.api
 
             if (id != person.Id)
             {
+                _logger.LogWarning("ID {id} does not equal person ID", id);
                 return BadRequest();
             }
 
@@ -99,6 +111,7 @@ namespace CIS174_TestCoreApp.Controllers.api
             {
                 if (!PersonExists(id))
                 {
+                    _logger.LogWarning("Could not update person with ID {id}", id);
                     return NotFound();
                 }
                 else
@@ -106,7 +119,7 @@ namespace CIS174_TestCoreApp.Controllers.api
                     throw;
                 }
             }
-
+            _logger.LogInformation("Updated person with ID {id}", id);
             return NoContent();
         }
 
@@ -142,6 +155,7 @@ namespace CIS174_TestCoreApp.Controllers.api
 
         private bool PersonExists(int id)
         {
+            _logger.LogInformation("Checking if person with ID {id} exists", id);
             return _context.Persons.Any(e => e.Id == id);
         }
     }

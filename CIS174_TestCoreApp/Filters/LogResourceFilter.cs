@@ -41,7 +41,6 @@ namespace CIS174_TestCoreApp.Filters
             logContext.SaveChanges();
 
             context.HttpContext.Items.Add("Log", log);
-            
         }
 
         public void OnResourceExecuting(ResourceExecutingContext context)

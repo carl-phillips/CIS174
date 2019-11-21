@@ -12846,23 +12846,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Carl\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Carl - Work\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Carl\\Documents\\GitHub\\CIS174\\CIS174_TestCoreApp\\CIS174_TestCoreApp.csproj",
+      "projectUniqueName": "C:\\Users\\Carl - Work\\Documents\\CIS174\\CIS174_TestCoreApp\\CIS174_TestCoreApp.csproj",
       "projectName": "CIS174_TestCoreApp",
-      "projectPath": "C:\\Users\\Carl\\Documents\\GitHub\\CIS174\\CIS174_TestCoreApp\\CIS174_TestCoreApp.csproj",
-      "packagesPath": "C:\\Users\\Carl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Carl\\Documents\\GitHub\\CIS174\\CIS174_TestCoreApp\\obj\\",
+      "projectPath": "C:\\Users\\Carl - Work\\Documents\\CIS174\\CIS174_TestCoreApp\\CIS174_TestCoreApp.csproj",
+      "packagesPath": "C:\\Users\\Carl - Work\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Carl - Work\\Documents\\CIS174\\CIS174_TestCoreApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Carl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Carl - Work\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

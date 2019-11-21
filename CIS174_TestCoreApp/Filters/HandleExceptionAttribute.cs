@@ -1,6 +1,7 @@
 ﻿using CIS174_TestCoreApp.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace CIS174_TestCoreApp.Filters
 {
     public class HandleExceptionAttribute : ExceptionFilterAttribute
     {
+        protected ILogger logger;
         public override void OnException(ExceptionContext context)
         {
             Log log = context.HttpContext.Items["LogContext"] as Log;
@@ -22,6 +24,9 @@ namespace CIS174_TestCoreApp.Filters
                 ExceptionMessage = context.Exception.Message,
                 StackTrace = context.Exception.StackTrace,
             };
+
+            logger.LogError("Error occurred: {context}", context.HttpContext.Response.StatusCode);
+            logger.LogError(error.ExceptionMessage);
 
             ErrorLogContext errorLogContext = new ErrorLogContext();
 
